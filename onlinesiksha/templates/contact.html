@@ -1,0 +1,73 @@
+ {% extends "basepage.html" %}
+{% block content %}
+{% load static %} 
+
+
+<li style="background-image: url({% static 'images/courses-header.jpg' %});">
+<div class="page-header">
+	<div class="page-header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <header class="entry-header">
+                            <h1>CONTACT</h1>
+                        </header><!-- .entry-header -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+     </div><!-- .page-header-overlay -->
+ </div><!-- .page-header -->
+</li>
+  <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <ul class="flex flex-wrap align-items-center p-0 m-0">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li>Contact</li>
+                    </ul>
+                </div><!-- .breadcrumbs -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+ 
+
+
+
+
+        <div class="row justify-content-between">
+            <div class="col-12">
+                <div class="contact-gmap">
+                    <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps/place/POLICE+STATION+TIKARMAFI/@26.1282227,81.8920628,15.83z/data=!4m5!3m4!1s0x399a8b100cf57dcd:0x898b24e56189446e!8m2!3d26.1319114!4d81.8977118?hl=en" allowfullscreen></iframe>
+                </div><!-- .contact-gmap -->
+            </div><!-- .col -->
+
+            <div class="col-12 col-lg-6">
+                <div class="contact-form">
+                    <h3>Contact Form</h3>
+
+                    <form method="POST">
+                        {% csrf_token %}
+
+                         {{ form }}
+                        <input type="submit" value="Send Message">
+                    </form>
+                </div><!-- .contact-form -->
+            </div><!-- .col -->
+
+            <div class="col-12 col-lg-6">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+
+                    <p>Plaese Write your problem regarding our website issue. Also suggest for improvment of my website. </p>
+
+                    <ul class="p-0 m-0">
+                        <li><span>Location:</span>Sultanpur, Uttar Pradesh, India</li>
+                        <li><span>Email:</span><a href="#">2020mridul@gmail.com</a></li>
+                        <li><span>Phone:</span><a href="#">+917905336635</a></li>
+                    </ul>
+                </div><!-- .contact-info -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+
+{% endblock %}

@@ -1,0 +1,76 @@
+ {% extends "basepage.html" %}
+{% block content %}
+{% load static %} 
+<li style="background-image: url({% static 'images/courses-header.jpg' %});">
+<div class="page-header">
+<div class="page-header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <header class="entry-header">
+                            <h1>BLOG</h1>
+                        </header><!-- .entry-header -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .page-header-overlay -->
+    </div><!-- .page-header -->
+</li>
+ <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <ul class="flex flex-wrap align-items-center p-0 m-0">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li>Blog</li>
+                    </ul>
+                </div><!-- .breadcrumbs -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+
+    <div class="row">
+        {% for blo in blog %}
+            <div class="col-12 col-lg-8">
+                <div class="blog-posts">
+                    <div class="row mx-m-25">
+                        <div class="col-12 col-md-6 px-25">
+                            <div class="blog-post-content">
+                                <figure class="blog-post-thumbnail position-relative m-0">
+                                    <a href="{% url 'blogdetail' blo.id %}"><img src="{{ blo.image.url }}" alt=""></a>
+
+                                    <div class="posted-date position-absolute">
+                                        <div class="day">{{ blo.pub_date }}</div>
+                                         
+                                    </div>
+                                </figure><!-- .blog-post-thumbnail -->
+
+                                <div class="blog-post-content-wrap">
+                                    <header class="entry-header">
+                                        <h2 class="entry-title"><a href="{% url 'blogdetail' blo.id %}">{{ blo.title }}</a></h2>
+
+                                        <div class="entry-meta flex align-items-center">
+                                            <div class="post-author"><a href=" #">{{ blo.name }} </a></div>
+
+                                            <div class="post-comments"><a href="#">02 Comments</a></div>
+                                        </div><!-- .entry-meta -->
+                                    </header><!-- .entry-header -->
+
+                                    <div class="entry-content">
+                                        <p> {{ blo.Summary }}</p>
+                                    </div><!-- .entry-content -->
+                                </div><!-- .blog-post-content-wrap -->
+                            </div><!-- .blog-post-content -->
+                        </div><!-- .col -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+ 
+
+
+
+{% endblock %}

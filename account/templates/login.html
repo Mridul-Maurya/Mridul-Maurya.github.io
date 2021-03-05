@@ -1,0 +1,40 @@
+{% extends "basepage.html" %}
+{% block content %}
+{% load static %} 
+<li style="background-image: url({% static 'images/courses-header.jpg' %});">
+<div class="page-header">
+	<div class="page-header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <header class="entry-header">
+                            <h1>Login Page</h1>
+                        </header><!-- .entry-header -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+     </div><!-- .page-header-overlay -->
+ </div><!-- .page-header -->
+</li>
+
+<div class="container" style="margin-left: 400px;">
+<h1>Login</h1>
+{{ error }}<br/>
+<form  method="POST" action="{% url 'login' %}" class="" >
+	{% csrf_token %}
+Username:<br/>
+<div class="form-group"> 
+<input type="text" name="username" id="username" class="form-contril input-lg" placeholder="username"/>
+</div>
+<br/> 
+ 
+Password:<br/>
+<div class="form-group"> 
+<input type="password" name="password" id="password" class="form-contril input-lg" placeholder="input password">
+</div>
+<br/> 
+ 
+<input class="btn btn-primary" type="submit" value="Login !"><br/><br/><br/>
+</form>
+</div>
+{% endblock %}

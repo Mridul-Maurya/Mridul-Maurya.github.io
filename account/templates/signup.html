@@ -1,0 +1,50 @@
+{% extends "basepage.html" %}
+{% block content %}
+{% load static %} 
+<li style="background-image: url({% static 'images/courses-header.jpg' %});">
+<div class="page-header">
+	<div class="page-header-overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <header class="entry-header">
+                            <h1>Signup Page</h1>
+                        </header><!-- .entry-header -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+     </div><!-- .page-header-overlay -->
+ </div><!-- .page-header -->
+</li>
+ <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <ul class="flex flex-wrap align-items-center p-0 m-0">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li>Sign Up</li>
+                    </ul>
+                </div><!-- .breadcrumbs -->
+            </div><!-- .col -->
+        </div><!-- .row -->
+    </div>
+
+<div class="container" style="margin-left: 400px;">
+<h1>Signup</h1>
+{{ error }}<br/>
+<form  method="POST" action="{% url 'signup' %}" class="" >
+	{% csrf_token %}
+Username:<br/>
+<input type="text" name="username" class="form-contril input-lg" placeholder="username"/>
+<br/><br/>
+Email:<br/>
+ <input type="text" name="email"  class="form-contril input-lg" class="text" value="your@email.com " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'your@email.com ';}" ><br/><br/>
+Password:<br/>
+<input type="password" name="password1" class="form-contril input-lg" placeholder="input password">
+<br/><br/>
+Confirm Password:<br/>
+<input type="password" name="password2" class="form-contril input-lg"placeholder="Confirm password"><br/><br/>
+<input class="btn btn-primary" type="submit" value="Sign up !"><br/><br/><br/>
+</form>
+</div>
+{% endblock %}
